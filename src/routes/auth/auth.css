@@ -1,0 +1,15 @@
+#authContainer {
+	width: 60%;
+	height: 100%;
+	padding: 2%;
+	margin: 0 auto;
+	color: white;
+	background-color: #044F67;
+	margin-top: 5%;
+	border-radius: 5px;
+}
+
+#title {
+	text-align: center;
+	margin-bottom: 1%;
+}
