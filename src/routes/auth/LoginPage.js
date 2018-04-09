@@ -26,12 +26,12 @@ class LoginPage extends React.Component {
 	}
 
 	handleSubmit(event) {
-		event.preventDefault();
+		// event.preventDefault();
 		// window.localStorage.setItem('zulie-user', JSON.stringify(this.state));
 		// this.props.history.push('/dashboard');
-		console.log("State:", this.state);
+		// console.log("State:", this.state);
 		axios
-			.get('https://eown-web.herokuapp.com/api/v1/users/login', this.state)
+			.post('https://eown-web.herokuapp.com/api/v1/users/login', this.state)
 			.then((result) => {
 				document.cookie = JSON.stringify(result.data);
 				window.localStorage.setItem('zulie-user', JSON.stringify(result.data));

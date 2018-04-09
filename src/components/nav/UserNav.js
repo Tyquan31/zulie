@@ -27,6 +27,9 @@ class UserNav extends React.Component {
 					      <li className="nav-item">
 					      	<Link className="nav-link" to="/projects">Projects</Link>
 					      </li>
+								<li className="nav-item">
+					      	<Link className="nav-link" to="/jobs">Jobs</Link>
+					      </li>
 					    </ul>
 					  </div>
 				  </div>

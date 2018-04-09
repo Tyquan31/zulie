@@ -3,12 +3,13 @@ import axios from 'axios';
 import UserNav from '../../components/nav/UserNav';
 
 
-class DashboardPage extends React.Component {
+class ProjectsPage extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			email: '',
-			clearenceLevel: 0
+			clearenceLevel: '',
+			jobs: []
 		};
 	}
 
@@ -18,14 +19,14 @@ class DashboardPage extends React.Component {
 		} else {
 			let localUser = JSON.parse(window.localStorage.getItem('zulie-user'));
 			console.log('Local Storage User:', localUser);
-			
 			axios
 				.get('https://eown-web.herokuapp.com/api/v1/users/' + localUser._id)
 				.then((result) => {
 					window.localStorage.setItem('zulie-user', JSON.stringify(result.data));
 					this.setState({
 						email: result.data.email,
-						clearenceLevel: result.data.clearenceLevel
+						clearenceLevel: result.data.clearenceLevel,
+						jobs: result.data.jobs || []
 					});
 				})
 				.catch((err) => {
@@ -49,11 +50,11 @@ class DashboardPage extends React.Component {
 							</div>
 						</div>
 					</div>
-					<h1>Dashboard Page</h1>
+					<h1>Jobs Page</h1>
 				</div>
 			</div>
 		);
 	}
 }
 
-export default DashboardPage;
+export default ProjectsPage;

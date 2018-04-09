@@ -8,6 +8,7 @@ import LoginPage from './auth/LoginPage';
 // User Routes
 import DashboardPage from './user/DashboardPage';
 import ProjectsPage from './user/ProjectsPage';
+import JobsListPage from './user/JobsListPage';
 
 export const history = createHistory();
 
@@ -30,6 +31,10 @@ export default () => (
 			<Route
 				path="/projects"
 				component={ProjectsPage}
+			/>
+			<Route
+				path="/jobs"
+				component={JobsListPage}
 			/>
 		</Switch>
 	</Router>
